@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <div class="hero bg-base-200 min-h-screen flex justify-center items-center">
+    <div class="w-full max-w-2xl">
+      <div class="card bg-base-100 shadow-lg p-5 w-full md:w-[600px]">
+        <div class="card-body">
+          <h1 class="text-3xl font-bold text-center mb-5">Todo App</h1>
+
+          <form id="todo_form" class="space-y-3" onsubmit="event.preventDefault(); addTodo();">
+            <input type="text" placeholder="Person Name - Position" class="input input-bordered w-full" name="pic" id="pic"/>
+            <input type="date" class="input input-bordered w-full" name="date" id="date"/>
+            <textarea class="textarea textarea-bordered w-full" placeholder="Tasks" name="task" id="task"></textarea>
+            <select class="select select-bordered w-full" name="priorityLevel" id="priorityLevel">
+              <option disabled selected>Priority Level</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+            <button class="btn btn-primary w-full">Submit</button>
+          </form>
+
+          <div class="mt-5 space-y-2">
+            <h2 class="text-lg font-semibold">List Task</h2>
+            
+            <div class="space-y-2" id="taskList">
+            </div>
+          </div>
+
+          <div class="mt-5 space-y-2">
+            <h2 class="text-lg font-semibold">Task Done</h2>
+
+            <div class="space-y-2" id="taskDone">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+</html>
